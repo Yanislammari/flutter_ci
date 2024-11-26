@@ -73,6 +73,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+        # Étape 3 : Configuration de Flutter
+      - name: Set Up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.4'
+          channel: 'stable'
+
+      # Étape 4 : Installation des dépendances Flutter
+      - name: Install Dependencies
+        run: flutter pub get
+
       # Étape 2 : Installation de CocoaPods
       - name: Install CocoaPods
         run: |
