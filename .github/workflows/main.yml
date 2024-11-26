@@ -104,12 +104,14 @@ jobs:
             -sdk iphoneos \
             -configuration Release \
             -archivePath build/ios/archive/Runner.xcarchive \
-            archive
+            archive \
+            -allowProvisioningUpdates
           xcodebuild \
             -exportArchive \
             -archivePath build/ios/archive/Runner.xcarchive \
             -exportPath build/ios/ipa \
-            -exportOptionsPlist ios/ExportOptions.plist
+            -exportOptionsPlist ios/ExportOptions.plist \
+            -allowProvisioningUpdates
 
       # Étape 4 : Téléversement des artefacts iOS
       - name: Upload iOS Artifacts
